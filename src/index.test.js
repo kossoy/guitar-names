@@ -24,5 +24,15 @@ describe('guitar names', function () {
 
             expect(guitars.all).to.include(randomItem);
         });
+
+        it('should return array of random items if passed', function () {
+            var randomItems = guitars.random(3);
+
+            expect(randomItems).to.have.length(3);
+            randomItems.forEach(function (item) {
+                expect(guitars.all).to.include(item);
+
+            });
+        });
     });
 });
